@@ -1,0 +1,92 @@
+section .gallery {
+    max-width: 90rem;
+    width: 84%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    row-gap: 3rem;
+    margin: 2rem;
+}
+
+section .gallery .card {
+    max-width: 90rem;
+    width: 20rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #f7f7f767;
+    box-shadow: 0 0 10px #00000080;
+    animation: slideInFromTop 0.5s ease-out;
+    overflow: hidden;
+}
+
+section .gallery .card .box:nth-child(1) {
+    width: 100%;
+    height: 60%;
+    background-color: #ffffff;
+}
+
+section .gallery .card .box:nth-child(1) img {
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+section .gallery .card .box:nth-child(2) {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+section .gallery .card .box:nth-child(2) .wrap {
+    width: 100%;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 0 2rem;
+}
+
+section .gallery .card .box:nth-child(2) .wrap:nth-child(1) {
+    align-items: start;
+    justify-content: center;
+}
+
+section .gallery .card .title,
+section .gallery .card .price {
+    padding-left: 0.3rem;
+    font-size: 1.7rem;
+    line-height: 3.5rem;
+    margin: 0;
+}
+
+section .gallery .card .price {
+    font-weight: bold;
+}
+
+section .gallery .card .box:nth-child(2) .wrap:nth-child(2) {
+    align-items: start;
+    justify-content: center;
+}
+
+section .gallery .card button {
+
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border: 2px solid #606060;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #fdfdfd;
+    background-color: #606060;
+    transition: 0.2s background-color;
+}
+
+section .gallery .card button:hover {
+    color: #383838;
+    background-color: #f7f7f767;
+    transition: 0.2s background-color;
+}

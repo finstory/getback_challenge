@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets//css//index.css">
+    <title>Get Back | Shop</title>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <nav>GET BACK | SHOP</nav>
+        
+        <header>
+            <form class="search-container" onsubmit="handleSubmit()">
+                <div class="search">
+                    <div class="label">Busca lo que quieras y cambialo fácilmente</div>
+                    <div class="input-wrap">
+                        <div class="icon" onclick="handleSubmit()">
+                            <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/w_100/v1688961364/glass_mvltuj.png"
+                                alt="glass">
+                        </div>
+                        <input id="searchByTagName" type="text" placeholder="BLACK DECKER 20">
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="box" onclick="togglePriceComparisonSelector()">
+                        <div class="selector" id="priceSelectorOptions">
+                            <div class="option" onclick="selectPriceComparison('_','Ninguno')">Ninguno</div>
+                            <div class="option" onclick="selectPriceComparison('<','Menor Que')">Menor Que</div>
+                            <div class="option" onclick="selectPriceComparison('=', 'Igual Que')">Igual Que</div>
+                            <div class="option" onclick="selectPriceComparison('>', 'Mayor Que')">Mayor Que</div>
+                        </div>
+                        <p id="priceSelector">Ninguno</p>
+                        <p id="priceSelectorIcon" class="icon">▼</p>
+                    </div>
+                    <div class="box">
+                        <div class="icon" onclick="handleSubmit()">$</div>
+                        <input id="searchByPrice" type="text" placeholder="Precio...">
+                    </div>
+                    <div class="box">
+                        <div class="icon" onclick="handleSubmit()">
+                            <img src="https://res.cloudinary.com/dz9smi3nc/image/upload/v1689063584/shop-mugs/tilde_qzbii7.png"
+                                alt="glass">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </header>
+
+        <section>
+            <div id="gallery" class="gallery"></div>
+            <div id="pagination" class="pagination"></div>
+        </section>
+
+        <footer>Prueba Técnina - Facundo Alvarez</footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
