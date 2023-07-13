@@ -34,7 +34,7 @@
 
     npm start
 
-2. Puedes observar la aplicación en la ruta principal:
+2. Puedes probar la aplicación en la ruta principal:
 
     http://localhost:3001/
    
