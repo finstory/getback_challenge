@@ -23,7 +23,7 @@
     - Añade tu base de datos PostgreSQL.
       
     ![image](https://github.com/finstory/getback_challenge/assets/95634052/f97d04c8-1aac-4b24-9f1f-8ba23eff5a6e)
-    - Añade los datos de las Api's extrenas. (Están incluidas en el email de respuesta, el archivo .env).
+    - Añade los datos de las Api's extrenas. (Están incluidas en el email, el archivo .env).
       
     ![image](https://github.com/finstory/getback_challenge/assets/95634052/52a3c3b9-09f1-4c14-93ae-a07b16f09519)
 
