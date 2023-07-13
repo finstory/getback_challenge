@@ -37,4 +37,6 @@
 2. Puedes observar la aplicación en la ruta principal:
 
     http://localhost:3001/
-v
+   
+    ![image](https://github.com/finstory/getback_challenge/assets/95634052/1e1fdce8-95a2-437d-a364-93fcd62c8aa9)
+
