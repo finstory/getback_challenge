@@ -18,7 +18,7 @@
 
     npm install
 
-4. Por último se deben configurar las variables de entorno:
+4. Por último se debe crear un archivo .env para configurar las variables de entorno (hay incluido un ejemplo en el repositorio):
 
     - Añade tu base de datos PostgreSQL.
       
