@@ -31,4 +31,16 @@ regexValidation.isUrl = (value) => {
     return !regexCode.test(value);
 };
 
+
+regexValidation.isString = (value) => {
+    return typeof value === "string";
+}
+
+regexValidation.isNumber = (value) => {
+    const regexCode = /^[0-9]+$/;
+    return regexCode.test(value);
+};
+
+
+
 module.exports = regexValidation;

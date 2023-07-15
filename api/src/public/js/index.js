@@ -10,7 +10,7 @@ const paginationElement = document.getElementById('pagination');
 
 //* Global Variables:
 
-const pagination = { currentPage: 1, perPage: 12, totalPage: 10 };
+const pagination = { current_page: 1, per_page: 12, totalPage: 10 };
 
 const filters = { tag_name: "", price_value: "", price_comparison: "" };
 
@@ -18,17 +18,17 @@ const filters = { tag_name: "", price_value: "", price_comparison: "" };
 
 const getProducts = async () => {
     const tag_name = `tag_name=${filters.tag_name}`;
-    const price_value = `price_value=${filters.price_value}`;
+    const price_value = `price_value=${filters.price_value || 0}`;
     const price_comparison = `price_comparison=${filters.price_comparison}`;
-    const perPage = `perPage=${pagination.perPage}`;
-    const currentPage = `currentPage=${pagination.currentPage}`;
+    const per_page = `per_page=${pagination.per_page}`;
+    const current_page = `current_page=${pagination.current_page}`;
 
     axios.get(
-        `http://localhost:3001/search?${tag_name}&${price_value}&${price_comparison}&${perPage}&${currentPage}`
+        `http://localhost:3001/search?${tag_name}&${price_value}&${price_comparison}&${per_page}&${current_page}`
     )
 
         .then(function (response) {
-            insertCards(response.data.products, pagination.perPage);
+            insertCards(response.data.products, pagination.per_page);
             pagination.totalPage = response.data.pagesTotal;
             insertPageBtn();
         })
@@ -42,7 +42,7 @@ const insertCards = (products) => {
     let cardListToInsert = "";
     let notFound = "<div>Lo sentimos, no hemos podido encontrar ningún producto.</div>";
     products.forEach((product, index) => {
-        if (index >= pagination.perPage) return;
+        if (index >= pagination.per_page) return;
         const cardHTML = `
       <div class="card">
         <div class="box">
@@ -73,7 +73,7 @@ const insertPageBtn = () => {
         // if (i === 1) continue;
         // if (pagination.totalPage === i)
         const box = `<div class="box"
-            style = "${i === pagination.currentPage ? btnSelectedStyle : ""}";
+            style = "${i === pagination.current_page ? btnSelectedStyle : ""}";
             onclick={togglePagination(${i})}>${i}</div>`;
         btnListToInsert += box;
     }
@@ -90,7 +90,7 @@ const handleSubmit = () => {
 }
 
 const togglePagination = (page) => {
-    pagination.currentPage = page;
+    pagination.current_page = page;
     insertPageBtn();
     getProducts();
 }

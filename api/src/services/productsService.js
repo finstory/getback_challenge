@@ -46,11 +46,11 @@ productsService.getAllProducts = async () => {
 }
 
 
-productsService.searchProducts = async (tag_name = "", price_value = 0, price_comparison = "", currentPage = 1, perPage = 10) => {
+productsService.searchProducts = async (tag_name = "", price_value = 0, price_comparison = "", current_page = 1, per_page = 10) => {
     try {
         price_value = parseFloat(price_value);
-        currentPage = parseFloat(currentPage);
-        perPage = parseFloat(perPage);
+        current_page = parseFloat(current_page);
+        per_page = parseFloat(per_page);
 
         const filter = {
             search_text: { [Op.iLike]: `%${tag_name}%` },
@@ -63,15 +63,17 @@ productsService.searchProducts = async (tag_name = "", price_value = 0, price_co
             default: break;
         }
 
-        const totalCount = await Product.count({ where: filter });
+        const totalPage = await Product.count({ where: filter });
 
-        const pagesTotal = Math.ceil(totalCount / perPage);
+        const pagesTotal = Math.ceil(totalPage / per_page);
 
         const products = await Product.findAll({
             where: filter,
-            limit: perPage,
-            offset: (currentPage - 1) * perPage,
+            limit: per_page,
+            offset: (current_page - 1) * per_page,
         });
+
+        if (!products) throwError("missing", 404, "Products was not found.");
 
         return {
             products,

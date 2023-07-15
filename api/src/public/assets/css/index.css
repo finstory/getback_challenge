@@ -19,8 +19,7 @@ body {
     justify-content: center;
     font-size: 1.6rem;
     line-height: 2;
-    font-family: 'Quantico';
-    font-style: normal;
+    font-family: 'Quantico' !important;
     color: #404040;
     background-color: #1f1724;
     background: linear-gradient(180deg, #1e1e1e 0%, #565656 100%);
