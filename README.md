@@ -5,7 +5,7 @@
 - /products | Obtiene todos los productos.
   <br><br>
 
-- /search | Filtra los prodcutos por nombre, precio y los paguina.
+- /search | Filtra los prodcutos por nombre, precio y los pagina.
 
   querys:
   
