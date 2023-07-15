@@ -13,7 +13,7 @@
   price_value => valor del precio | number<br>
   price_comparison => tipo de comparación | < o > o = | string<br>
   current_page =>  paguina actual | number<br>
-  per_page => 10<br>
+  per_page => cantidad de productos por paguina | number<br>
 
 ----------------------------------------------------------------------
 
