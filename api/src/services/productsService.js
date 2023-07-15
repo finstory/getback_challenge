@@ -48,10 +48,7 @@ productsService.getAllProducts = async () => {
 
 productsService.searchProducts = async (tag_name = "", price_value = 0, price_comparison = "", current_page = 1, per_page = 10) => {
     try {
-        price_value = parseFloat(price_value);
-        current_page = parseFloat(current_page);
-        per_page = parseFloat(per_page);
-
+        
         const filter = {
             search_text: { [Op.iLike]: `%${tag_name}%` },
         };
