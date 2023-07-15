@@ -1,5 +1,22 @@
 # GETBACK CHALLENGE
 
+## Endpoints
+
+- /products | Obtiene todos los productos.
+  <br><br>
+
+- /search | Filtra los prodcutos por nombre, precio y los pagina.
+
+  Querys:
+  
+  tag_name => Nombre completo o parcial | string<br>
+  price_value => Valor del precio | number<br>
+  price_comparison => Tipo de comparación | "<" o ">" o "="<br>
+  current_page =>  Paguina actual | number<br>
+  per_page => Cantidad de productos por paguina | number<br>
+
+----------------------------------------------------------------------
+
 ## Requisitos previos
 
 - Node.js: [Descargar Node.js](https://nodejs.org)
