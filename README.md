@@ -3,7 +3,7 @@
 ## Endpoint
 
 - /products | Obtiene todos los productos.
-  
+  <br>
 
 - /search | Filtra los prodcutos por nombre, precio y los paguina.
 
