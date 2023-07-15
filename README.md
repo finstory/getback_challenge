@@ -7,13 +7,13 @@
 
 - /search | Filtra los prodcutos por nombre, precio y los pagina.
 
-  querys:
+  Querys:
   
-  tag_name => nombre | string<br>
-  price_value => valor del precio | number<br>
-  price_comparison => tipo de comparación | "<" o ">" o "=" | string<br>
-  current_page =>  paguina actual | number<br>
-  per_page => cantidad de productos por paguina | number<br>
+  tag_name => Nombre | string<br>
+  price_value => Valor del precio | number<br>
+  price_comparison => Tipo de comparación | "<" o ">" o "=" | string<br>
+  current_page =>  Paguina actual | number<br>
+  per_page => Cantidad de productos por paguina | number<br>
 
 ----------------------------------------------------------------------
 
