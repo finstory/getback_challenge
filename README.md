@@ -9,11 +9,11 @@
 
   querys:
   
-  tag_name => nombre | string
-  price_value => valor del precio | number
-  price_comparison => tipo de comparación | < o > o = | string
-  current_page =>  paguina actual | number
-  per_page => 10
+  tag_name => nombre | string \n
+  price_value => valor del precio | number \n
+  price_comparison => tipo de comparación | < o > o = | string \n
+  current_page =>  paguina actual | number \n
+  per_page => 10 \n
 
 ----------------------------------------------------------------------
 
