@@ -9,7 +9,7 @@
 
   Querys:
   
-  tag_name => Nombre | string<br>
+  tag_name => Nombre completo o parcial | string<br>
   price_value => Valor del precio | number<br>
   price_comparison => Tipo de comparación | "<" o ">" o "=" | string<br>
   current_page =>  Paguina actual | number<br>
