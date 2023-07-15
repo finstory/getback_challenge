@@ -1,6 +1,6 @@
 # GETBACK CHALLENGE
 
-## Endpoint
+## Endpoints
 
 - /products | Obtiene todos los productos.
   <br><br>
