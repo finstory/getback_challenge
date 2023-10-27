@@ -35,6 +35,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/v1698404024/shop-mugs/banner-landing-asesoria-getback_fxynst.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 ::selection {
@@ -57,8 +61,8 @@ body {
     /* border: 1px solid #f0f0f0; */
     /* background-color: #6153cc; */
     /* background: linear-gradient(0deg, #5c07ff 0%, #8f2aff 100%); */
-    background-color: var(--color-strong-primary);
-    border-radius: 2rem;
+    background-color: var(--color-secondary);
+    /* border-radius: 2rem; */
 }
 
 /* END SCROLL */

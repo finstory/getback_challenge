@@ -1,10 +1,15 @@
+@import url("../../../css/animations/animation.css");
+
 footer {
     position: absolute;
     bottom: 0;
+    height: 4rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--color-strong-primary);
-    color: var(--color-main);
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    animation: slideInFromTop 2s ease-out;
 }

@@ -1,11 +1,10 @@
  .filters_container {
      position: relative;
      width: 100%;
-     height: 18rem;
+     height: 20rem;
      display: flex;
      justify-content: center;
      align-items: center;
-     background-color: var(--color-main);
  }
 
  form {
@@ -17,9 +16,8 @@
      flex-direction: column;
      justify-content: center;
      align-items: center;
-     gap: 1rem;
+     gap: 2rem;
      padding: 2rem;
-     background-color: var(--color-main);
  }
 
  form .label {
@@ -28,10 +26,12 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     color: var(--color-strong-text);
+     color: var(--color-secondary);
+     font-size: 1.5rem;
  }
 
  form .search {
+     position: relative;
      width: 100%;
      flex-basis: 1/3;
      display: flex;
@@ -42,7 +42,6 @@
 
 
  form .search .input_wrap {
-     position: relative;
      width: 100%;
      height: 4rem;
  }
@@ -54,13 +53,34 @@
      border: 0;
      border-radius: 1rem;
      box-sizing: border-box;
-     border: 2px solid var(--color-strong-text);
+     color: var(--color-strong-primary);
+     border: 2px solid var(--color-strong-primary);
  }
 
  form .search .input_wrap input:focus {
-     border: 2px solid var(--color-strong-primary);
      color: var(--color-strong-primary);
+     border: 2px solid var(--color-strong-primary);
      outline: none;
+ }
+
+ form .search .submit_btn {
+     position: absolute;
+     right: 0;
+     height: 100%;
+     width: 4rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     border-radius: 0 1rem 1rem 0;
+ }
+
+ form .search .submit_btn img {
+     width: 60%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
  }
 
  form .filter {
@@ -69,6 +89,8 @@
      display: flex;
      justify-content: center;
      align-items: center;
+     background-color: var(--color-main);
+     border-radius: 2rem;
  }
 
  form .filter .box {
@@ -108,6 +130,7 @@
 
  }
 
+
  form .filter .box:nth-child(2) .input_wrap {
      position: relative;
      width: 100%;
@@ -138,4 +161,9 @@
      cursor: pointer;
      border-radius: 0 1rem 1rem 0;
      background-color: var(--color-strong-primary);
+ }
+
+ form .filter .box:nth-child(3) img {
+     width: 70%;
+     display: block;
  }

@@ -1,5 +1,8 @@
+@import url("../../../css/animations/animation.css");
+
 .gallery {
     max-width: 90rem;
+    min-height: 35rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -19,7 +22,7 @@
     box-shadow: 0 0 10px #00000039;
     animation: slideInFromTop 0.5s ease-out;
     overflow: hidden;
-    background-image: url("https://cdn.shopify.com/s/files/1/0717/6935/8643/files/E33A2095_1800x_7ab613cf-2ad5-4b84-b6f2-56aa28ddae97.webp?v=1687918248");
+    background-image: url("https://res.cloudinary.com/dz9smi3nc/image/upload/v1698386205/shop-mugs/png-transparent-load-the-map-loading-load-waiting_bsfqyr.png");
     background-size: cover;
     background-position: center;
 }
@@ -28,12 +31,12 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 25%;
+    height: 45%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 0 1.5rem 0 1.5rem;
+    padding: 1.5rem 1.5rem;
     background-color: #3a5ac5e8;
     color: var(--color-main);
 }
@@ -46,7 +49,6 @@
 }
 
 .gallery .card .bottom {
-    flex-basis: 1/2;
     width: 100%;
     display: flex;
     align-items: center;
@@ -57,13 +59,12 @@
     flex-basis: 1/4;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .gallery .card .bottom .details {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+
 }
 
 .gallery .bottom button {
