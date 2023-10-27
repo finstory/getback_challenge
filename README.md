@@ -10,10 +10,10 @@
   Querys:
   
   tag_name => Nombre completo o parcial | string<br>
-  price_value => Valor del precio | int<br>
+  price_value => Valor del precio | number<br>
   price_comparison => Tipo de comparación | "<" o ">" o "="<br>
-  current_page =>  página actual | int<br>
-  per_page => Cantidad de productos por página | int<br>
+  current_page =>  Paguina actual | number<br>
+  per_page => Cantidad de productos por paguina | number<br>
 
 ----------------------------------------------------------------------
 

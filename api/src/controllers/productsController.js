@@ -5,16 +5,15 @@ productsController.productsGet = async (req, res) => {
     try {
         res.status(200).json(await getAllProducts());
     } catch (error) {
-        res.status(error.status || 404).json(error.massage);
+        res.status(error.status || 404).json(error.payload || error.massage);
     }
 }
-
 productsController.searchGet = async (req, res) => {
     try {
-        const { tag_name, price_value, price_comparison, current_page, per_page } = req.query;
-        res.status(200).json(await searchProducts(tag_name, price_value, price_comparison, current_page, per_page));
+
+        res.status(200).json(await searchProducts(req.query));
     } catch (error) {
-        res.status(error.status || 404).json(error.massage);
+        res.status(error.status || 404).json(error.payload || error.massage);
     }
 }
 

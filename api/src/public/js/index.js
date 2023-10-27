@@ -132,6 +132,6 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-//* Start:
+//* Initial:
 
 togglePagination(1);

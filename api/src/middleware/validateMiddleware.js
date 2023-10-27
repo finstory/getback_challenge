@@ -20,10 +20,10 @@ middleware.validationSearchGet = (req, res, next) => {
         )
             next();
         else
-            return throwError("data_invalid", 401, "You data is invalid.");
+            return throwError("data_invalid", 400, "You data is invalid.");
 
     } catch (error) {
-        res.status(error.status || 404).json(error.payload);
+        res.status(error.status || 404).json(error.payload || error.massage);
     }
 };
 

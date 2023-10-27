@@ -32,6 +32,7 @@ regexValidation.isUrl = (value) => {
 };
 
 
+
 regexValidation.isString = (value) => {
     return typeof value === "string";
 }
