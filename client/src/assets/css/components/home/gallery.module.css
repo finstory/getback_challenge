@@ -1,0 +1,82 @@
+.gallery {
+    max-width: 90rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    row-gap: 3rem;
+    margin: 2rem;
+}
+
+.gallery .card {
+    position: relative;
+    max-width: 90rem;
+    width: 20rem;
+    height: 35rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #00000039;
+    animation: slideInFromTop 0.5s ease-out;
+    overflow: hidden;
+    background-image: url("https://cdn.shopify.com/s/files/1/0717/6935/8643/files/E33A2095_1800x_7ab613cf-2ad5-4b84-b6f2-56aa28ddae97.webp?v=1687918248");
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery .card .body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1.5rem 0 1.5rem;
+    background-color: #3a5ac5e8;
+    color: var(--color-main);
+}
+
+.gallery .card .body .title {
+    flex-basis: 1/2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gallery .card .bottom {
+    flex-basis: 1/2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery .card .bottom .price {
+    flex-basis: 1/4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gallery .card .bottom .details {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gallery .bottom button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border: 2px solid #606060;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #fdfdfd;
+    background-color: var(--color-secondary);
+    transition: 0.5s background-color;
+}
+
+.gallery .card button:hover {
+    background-color: var(--color-strong-secondary);
+    transition: 0.5s background-color;
+}

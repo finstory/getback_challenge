@@ -1,0 +1,27 @@
+@keyframes showing {
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .8;
+    }
+   60% {
+        opacity: 1;
+    }
+    70% {
+        opacity:.8;
+    }
+    80% {
+        opacity: 1;
+    }
+}
+
+
+.anim-showing {
+    animation: showing 2s ease-in-out forwards;
+}
+
