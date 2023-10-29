@@ -5,7 +5,7 @@ const { validationSearchGet } = require("../middleware/validateMiddleware");
 
 router.get("/products", productsGet);
 
-//% QUERY REQUIRED : tag_name, price_value, price_comparison, current_page, per_page.
+//% QUERY : tag_name, price_value, price_comparison, current_page, per_page.
 router.get("/search", validationSearchGet, searchGet);
 
 module.exports = router;

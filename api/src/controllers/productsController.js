@@ -1,4 +1,5 @@
 const productsController = {};
+const { sendResponse, sendError } = require("../helpers/managerController");
 const {
   getAllProducts,
   searchProducts,
@@ -6,19 +7,20 @@ const {
 
 productsController.productsGet = async (req, res) => {
   try {
-    res.status(200).json(await getAllProducts());
-  } catch (error) {
-    res.status(error.status || 404).json(error.massage);
+    const result = await getAllProducts();
+    sendResponse(res, 200, result);
+  } catch (e) {
+    sendError(res, e);
   }
 };
 
 productsController.searchGet = async (req, res) => {
   try {
     // const { tag_name, price_value, price_comparison, current_page, per_page } =
-
-    res.status(200).json(await searchProducts(req.query));
-  } catch (error) {
-    res.status(error.status || 404).json(error.massage);
+    const result = await searchProducts(req.query);
+    sendResponse(res, 200, result);
+  } catch (e) {
+    sendError(res, e);
   }
 };
 

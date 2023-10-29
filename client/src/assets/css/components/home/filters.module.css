@@ -1,3 +1,5 @@
+@import url("../../../css/animations/animation.css");
+
  .filters_container {
      position: relative;
      width: 100%;
@@ -120,6 +122,28 @@
      right: 1.5rem;
      margin: 0;
      color: var(--color-main);
+ }
+
+
+ form .filter .box:nth-child(1) .selector {
+     z-index: 4;
+     position: absolute;
+     width: 100%;
+     top: -2px;
+     right: 2px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     margin: 0;
+     padding-left: 2rem;
+     color: var(--color-main);
+     border-radius: 1rem;
+     background-color: var(--color-strong-primary);
+     
+ }
+
+ form .filter .box:nth-child(1) .selector .option {
+     padding: 0.6rem 0;
  }
 
  form .filter .box:nth-child(2) {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "../../../../assets/css/components/home/filters.module.css";
 
 export const PriceFilter = ({
@@ -7,12 +7,18 @@ export const PriceFilter = ({
   setPriceFilter,
   setPriceComparisonFilter,
 }) => {
+  const [priceComparisonName, setPriceComparisonName] = useState("Ninguno");
+  const [activePriceComparison, setActivePriceComparison] = useState(false);
+
   const handelPriceSubmit = () => {
-    setPriceFilter(value || 0);
+    if (priceComparisonName !== "Ninguno") setPriceFilter(value || 0);
+    else alert("debés seleccionar un tipo de comparación!.");
   };
 
-  const handelPriceComparisonSubmit = (priceComparison) => {
-    setPriceComparisonFilter(priceComparison);
+  const handleSelectorComparison = (option, name) => {
+    setActivePriceComparison(!activePriceComparison);
+    setPriceComparisonFilter(option);
+    setPriceComparisonName(name);
   };
 
   const handleKeyPress = (e) => {
@@ -23,9 +29,62 @@ export const PriceFilter = ({
 
   return (
     <div className={css.filter}>
-      <div className={css.box}>
-        <p>Ninguno</p>
+      <div
+        className={css.box}
+        onClick={() => {
+          setActivePriceComparison(!activePriceComparison);
+        }}
+      >
+        <p>{priceComparisonName}</p>
         <p className={css.selector_btn}>▼</p>
+        <div
+          className={css.selector}
+          style={
+            activePriceComparison
+              ? {
+                  zIndex: 1,
+                  animation: "slideDown 0.2s ease-out",
+                }
+              : {
+                  zIndex: -4,
+                  animation: "slideUp 0.2s ease-out",
+                  animationFillMode: "forwards",
+                }
+          }
+        >
+          <div
+            className={css.option}
+            onClick={() => {
+              handleSelectorComparison("", "Ninguno");
+            }}
+          >
+            Ninguno
+          </div>
+          <div
+            className={css.option}
+            onClick={() => {
+              handleSelectorComparison("<", "Menor Que");
+            }}
+          >
+            Menor Que
+          </div>
+          <div
+            className={css.option}
+            onClick={() => {
+              handleSelectorComparison("=", "Igual Que");
+            }}
+          >
+            Igual Que
+          </div>
+          <div
+            className={css.option}
+            onClick={() => {
+              handleSelectorComparison(">", "Mayor Que");
+            }}
+          >
+            Mayor Que
+          </div>
+        </div>
       </div>
       <div className={css.box}>
         <div className={css.input_wrap}>

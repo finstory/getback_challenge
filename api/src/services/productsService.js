@@ -30,14 +30,10 @@ productsService.performInitialDataDump = async () => {
 };
 
 productsService.getAllProducts = async () => {
-  try {
-    const products = await Product.findAll();
+  const products = await Product.findAll();
 
-    if (products.length > 0) return products;
-    else throwError("missing", 404, "Products was not found.");
-  } catch (error) {
-    throw error;
-  }
+  if (products.length > 0) return products;
+  else throwError("missing", 404, "Products was not found.");
 };
 
 productsService.searchProducts = async ({
@@ -47,45 +43,40 @@ productsService.searchProducts = async ({
   current_page = 1,
   per_page = 10,
 }) => {
+  const filter = {
+    search_text: { [Op.iLike]: `%${tag_name}%` },
+  };
 
-  try {
-    const filter = {
-      search_text: { [Op.iLike]: `%${tag_name}%` },
-    };
-
-    switch (price_comparison) {
-      case ">":
-        filter.price = { [Op.gt]: price_value };
-        break;
-      case "<":
-        filter.price = { [Op.lt]: price_value };
-        break;
-      case "=":
-        filter.price = { [Op.eq]: price_value };
-        break;
-      default:
-        break;
-    }
-
-    const totalPage = await Product.count({ where: filter });
-
-    const pagesTotal = Math.ceil(totalPage / per_page);
-
-    const products = await Product.findAll({
-      where: filter,
-      limit: per_page,
-      offset: (current_page - 1) * per_page,
-    });
-
-    if (!products) throwError("missing", 404, "Products was not found.");
-
-    return {
-      products,
-      pagesTotal,
-    };
-  } catch (error) {
-    throw error;
+  switch (price_comparison) {
+    case ">":
+      filter.price = { [Op.gt]: price_value };
+      break;
+    case "<":
+      filter.price = { [Op.lt]: price_value };
+      break;
+    case "=":
+      filter.price = { [Op.eq]: price_value };
+      break;
+    default:
+      break;
   }
+
+  const totalPage = await Product.count({ where: filter });
+
+  const pagesTotal = Math.ceil(totalPage / per_page);
+
+  const products = await Product.findAll({
+    where: filter,
+    limit: per_page,
+    offset: (current_page - 1) * per_page,
+  });
+
+  if (!products) throwError("missing", 404, "Products was not found.");
+
+  return {
+    products,
+    pagesTotal,
+  };
 };
 
 module.exports = productsService;

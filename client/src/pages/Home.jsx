@@ -8,18 +8,15 @@ import { Header } from "../components/Global/Header";
 import { Footer } from "../components/Global/Footer";
 
 export const Home = () => {
-
   return (
-    <>
-      <div className={css.home}>
-        <Header />
-        <Filters />
-        <main>
-          <Gallery />
-          <Pagination />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <div className={css.home}>
+      <Header />
+      <Filters />
+      <main>
+        <Gallery />
+        <Pagination />
+      </main>
+      <Footer />
+    </div>
   );
 };

@@ -17,5 +17,4 @@ const rootReducer = (state = initialState, { payload }) => {
   } else return { ...state };
 };
 
-
 export default rootReducer;

@@ -5,17 +5,14 @@ import { useProductsServices } from "../../../services/useProductsServices";
 
 export const Gallery = () => {
   const {
-    products: { filters },
-    filterProducts,
+    products: { products_list, filters },
+    getFilterProducts,
   } = useProductsServices();
 
   useEffect(() => {
-    filterProducts();
+    getFilterProducts();
   }, [JSON.stringify(filters)]);
 
-  const {
-    products: { products_list },
-  } = useProductsServices();
   return (
     <section className={css.gallery}>
       {products_list.length > 0 &&

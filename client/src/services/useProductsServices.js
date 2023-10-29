@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useRedux } from "../context/useRedux";
+import { useRedux } from "../redux/reducer/useRedux";
 import api from "../../utilities/axios/axiosConfig";
 
 export const productsReducer = {
@@ -8,8 +8,8 @@ export const productsReducer = {
   filters: {
     tag_name: "",
     price: 0,
-    price_comparison: ">",
-    per_page: 10,
+    price_comparison: "",
+    per_page: 12,
     current_page: 1,
   },
   pages_total: 1,
@@ -21,6 +21,8 @@ export const useProductsServices = () => {
 
   // Add your services (or redux actions)...
 
+  //% Api Services
+
   services.getAllProducts = async () => {
     api("/products")
       .then((response) => {
@@ -31,17 +33,23 @@ export const useProductsServices = () => {
       });
   };
 
-  services.filterProducts = async () => {
+  services.getFilterProducts = async () => {
+    let query = "";
     const {
       filters: { tag_name, price, price_comparison, per_page, current_page },
     } = products;
-    api(
-      `/search?tag_name=${tag_name}&price_value=${price}&price_comparison=${price_comparison}&per_page=${per_page}&current_page=${current_page}`
-    )
+
+    if (tag_name) query += `tag_name=${tag_name}&`;
+    if (price) query += `price_value=${price}&`;
+    if (price_comparison) query += `price_comparison=${price_comparison}&`;
+    if (per_page) query += `per_page=${per_page}&`;
+    if (current_page) query += `current_page=${current_page}`;
+
+    api(`/search?${query}`)
       .then((response) => {
         setProducts(
           { products_list: response.data.products },
-          "FILTER_PRODUCTS"
+          "GET_FILTER_PRODUCTS"
         );
         setProducts(
           { pages_total: response.data.pagesTotal },
@@ -52,6 +60,8 @@ export const useProductsServices = () => {
         error.response && alert(error.response.data);
       });
   };
+
+  //* Filters Services
 
   services.setTagNameFilter = async (tag_name = "") => {
     const { filters } = products;
@@ -69,7 +79,7 @@ export const useProductsServices = () => {
     );
   };
 
-  services.setPriceComparisonFilter = async (price_comparison = ">") => {
+  services.setPriceComparisonFilter = async (price_comparison = "") => {
     const { filters } = products;
     setProducts(
       { filters: { ...filters, price_comparison, current_page: 1 } },

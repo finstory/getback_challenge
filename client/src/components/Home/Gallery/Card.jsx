@@ -9,8 +9,6 @@ export const Card = ({ name = "", price = 2, image }) => {
       className={css.card}
       style={{
         backgroundImage: `url(${image})`,
-        // backgroundSize: "cover",
-        // backgroundPosition: "center",
       }}
     >
       <div className={css.body}>
